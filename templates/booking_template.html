@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #000;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        .info-table th, .info-table td {
+            padding: 18px;
+            border: 1px solid #ccc;
+        }
+        .info-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+            width: 30%;
+        }
+        .info-table td {
+            background-color: #fcfcfc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ image_path }}" alt="Taxi Icon">
+        <div class="title">Cab Booking Confirmation</div>
+    </div>
+    <table class="info-table">
+        <tr>
+            <th>Booking ID</th>
+            <td>{{ booking_id }}</td>
+        </tr>
+        <tr>
+            <th>Customer Name</th>
+            <td>{{ customer_name }}</td>
+        </tr>
+        <tr>
+            <th>Pickup Location</th>
+            <td>{{ pickup }}</td>
+        </tr>
+        <tr>
+            <th>Drop Location</th>
+            <td>{{ drop }}</td>
+        </tr>
+        <tr>
+            <th>Car Details</th>
+            <td>{{ car }}</td>
+        </tr>
+        <tr>
+            <th>Confirmation sent to</th>
+            <td>{{ email }}</td>
+        </tr>
+    </table>
+</body>
+</html>
