@@ -57,4 +57,6 @@ def serve_pdf(filename):
     return send_from_directory(PDF_FOLDER, f"{filename}.pdf")  # <== inline viewing
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the port from the environment variable, default to 5000 if not set
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)  # Listen on dynamic port provided by Render
